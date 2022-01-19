@@ -3,21 +3,22 @@ package com.example.block.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
+
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
+@AllArgsConstructor @NoArgsConstructor
 public class Transaction {
-    @Id
-    private String id;
+
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id ;
     private Date date;
-    private String adresseSource;
-    private String adresseDestination;
-    private Double montant;
+    private String address_src ;
+    private String address_dst ;
+    private double montant ;
 }
